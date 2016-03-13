@@ -2,6 +2,7 @@ FROM gliderlabs/alpine:3.2
 MAINTAINER Seigo Uchida <spesnova@gmail.com> (@spesnova)
 
 ENV ENTRYKIT_VERSION=0.4.0
+EXPOSE 8080
 
 WORKDIR /
 
@@ -16,6 +17,5 @@ RUN apk-install openssl nginx \
       && entrykit --symlink
 
 COPY ./nginx.conf.tmpl /etc/nginx/nginx.conf.tmpl
-COPY ./index.html /index.html
 
 ENTRYPOINT ["render", "/etc/nginx/nginx.conf", "--", "/usr/sbin/nginx"]
