@@ -1,7 +1,7 @@
 FROM gliderlabs/alpine:3.2
 MAINTAINER Seigo Uchida <spesnova@gmail.com> (@spesnova)
 
-ENV ENTRYKIT_VERSION=0.4.0
+ENV ENTRYKIT_VERSION 0.4.0
 EXPOSE 8080
 
 WORKDIR /
