@@ -8,6 +8,8 @@ events {
 }
 
 http {
+  include /etc/nginx/mime.types;
+
   upstream app {
     server {{ var "UPSTREAM_SERVER" | default "unix:///app/tmp/puma.sock" }} fail_timeout=0;
   }
