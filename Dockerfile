@@ -17,5 +17,6 @@ RUN apk-install openssl nginx \
       && entrykit --symlink
 
 COPY ./nginx.conf.tmpl /etc/nginx/nginx.conf.tmpl
+COPY ./index.html /public/index.html
 
 ENTRYPOINT ["render", "/etc/nginx/nginx.conf", "--", "/usr/sbin/nginx"]
